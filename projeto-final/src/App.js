@@ -7,13 +7,17 @@ import Header from "./components/Header";
 import Routes from "./routes";
 import Footer from "./components/Footer";
 
+import { UserStorage } from "./Context/UserContext";
+
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
-        <Routes />
-        <Footer />
+        <UserStorage>
+          <Header />
+          <Routes />
+          <Footer />
+        </UserStorage>
       </BrowserRouter>
     </div>
   );

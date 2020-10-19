@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./LoginForm.module.css";
@@ -6,32 +6,22 @@ import styles from "./LoginForm.module.css";
 import Input from "../Input";
 import Button from "../Button";
 
+import { UserContext } from "../../Context/UserContext";
+
 import useForm from "../../hooks/useForm";
 
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
 
-  function handleSubmit(event) {
+  const { userLogin, error, loading } = useContext(UserContext);
+
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    (async function () {
-      if (username.validate() && password.validate()) {
-        const response = await fetch(
-          "https://dogsapi.origamid.dev/json/jwt-auth/v1/token",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(),
-          }
-        );
-
-        const data = await response.json();
-        console.log(data);
-      }
-    })();
+    if (username.validate() && password.validate()) {
+      await userLogin(username.value, password.value);
+    }
   }
 
   return (
@@ -40,7 +30,13 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button>Entrar</Button>
+        {loading ? (
+          <Button disabled>Carregando...</Button>
+        ) : (
+          <Button>Entrar</Button>
+        )}
+
+        {error && <p>{error}</p>}
       </form>
       <Link to="/login/criar">Cadastro</Link>
     </section>
