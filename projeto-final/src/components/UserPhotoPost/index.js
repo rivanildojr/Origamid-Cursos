@@ -4,7 +4,7 @@ import styles from "./UserPhotoPost.module.css";
 
 import Input from "../Input";
 import Button from "../Button";
-import Error from "../Error";
+import Error from "../../utils/Error";
 
 import { PHOTO_POST } from "../../service/api";
 

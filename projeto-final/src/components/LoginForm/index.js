@@ -6,7 +6,7 @@ import stylesBtn from "../Button/Button.module.css";
 
 import Input from "../Input";
 import Button from "../Button";
-import Error from "../Error";
+import Error from "../../utils/Error";
 
 import { UserContext } from "../../Context/UserContext";
 

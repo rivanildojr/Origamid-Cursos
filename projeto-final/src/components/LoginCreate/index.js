@@ -4,7 +4,7 @@ import styles from "./LoginCreate.module.css";
 
 import Input from "../Input";
 import Button from "../Button";
-import Error from "../Error";
+import Error from "../../utils/Error";
 
 import useForm from "../../hooks/useForm";
 import useFetch from "../../hooks/useFetch";
