@@ -14,8 +14,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <UserStorage>
-          <Header />
-          <Routes />
+          <main className="AppBody">
+            <Header />
+            <Routes />
+          </main>
           <Footer />
         </UserStorage>
       </BrowserRouter>
