@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React, { lazy, Suspense, useEffect } from "react";
 
 import styles from "./UserStats.module.css";
-
-import UserStatsGraphs from "../UserStatsGraphs";
 
 import Head from "../../utils/Head";
 import Error from "../../utils/Error";
@@ -11,6 +9,8 @@ import Loading from "../../utils/Loading";
 import useFetch from "../../hooks/useFetch";
 
 import { STATS_GET } from "../../service/api";
+
+const UserStatsGraphs = lazy(() => import("../UserStatsGraphs"));
 
 const UserStats = () => {
   const { data, error, loading, request } = useFetch();
@@ -26,10 +26,10 @@ const UserStats = () => {
   if (loading) return <Loading />;
   if (data)
     return (
-      <div>
+      <Suspense fallback={<Loading />}>
         <Head title="Estatística" />
         <UserStatsGraphs data={data} />
-      </div>
+      </Suspense>
     );
   else return null;
 };
