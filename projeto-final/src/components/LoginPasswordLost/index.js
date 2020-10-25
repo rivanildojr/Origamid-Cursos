@@ -5,6 +5,7 @@ import styles from "./LoginPasswordLost.module.css";
 import Input from "../Input";
 import Button from "../Button";
 import Error from "../../utils/Error";
+import Head from "../../utils/Head";
 
 import useForm from "../../hooks/useForm";
 import useFetch from "../../hooks/useFetch";
@@ -28,6 +29,7 @@ const LoginPasswordLost = () => {
 
   return (
     <section>
+      <Head title="Perdeu a senha" />
       <h1 className="title">Perdeu a Senha?</h1>
       {data ? (
         <p style={{ color: "#4c1" }}>{data}</p>

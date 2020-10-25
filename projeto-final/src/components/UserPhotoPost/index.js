@@ -5,6 +5,7 @@ import styles from "./UserPhotoPost.module.css";
 import Input from "../Input";
 import Button from "../Button";
 import Error from "../../utils/Error";
+import Head from "../../utils/Head";
 
 import { PHOTO_POST } from "../../service/api";
 
@@ -52,6 +53,7 @@ const UserPhotoPost = () => {
 
   return (
     <section className={`${styles.photoPost} animeLeft`}>
+      <Head title="Poste sua foto" description="Pagina de Postar fotos" />
       <form onSubmit={handleSubmit}>
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />

@@ -5,6 +5,7 @@ import styles from "./LoginPasswordReset.module.css";
 import Input from "../Input";
 import Button from "../Button";
 import Error from "../../utils/Error";
+import Head from "../../utils/Head";
 
 import useForm from "../../hooks/useForm";
 import useFetch from "../../hooks/useFetch";
@@ -45,6 +46,7 @@ const LoginPasswordReset = () => {
 
   return (
     <div>
+      <Head title="Resetar a senha" />
       <h1 className="title">Resete a Senha</h1>
       <form onSubmit={handleSubmit}>
         <Input

@@ -5,6 +5,7 @@ import styles from "./LoginCreate.module.css";
 import Input from "../Input";
 import Button from "../Button";
 import Error from "../../utils/Error";
+import Head from "../../utils/Head";
 
 import useForm from "../../hooks/useForm";
 import useFetch from "../../hooks/useFetch";
@@ -35,6 +36,7 @@ const LoginCreate = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Crie sua conta" />
       <h1 className="title">Cadastre-se</h1>
 
       <form onSubmit={handleSubmit}>
