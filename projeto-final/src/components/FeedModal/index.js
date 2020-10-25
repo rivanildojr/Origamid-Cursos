@@ -17,7 +17,7 @@ const FeedModal = ({ photo, setModalPhoto }) => {
   useEffect(() => {
     const { url, options } = PHOTO_GET(photo.id);
     request(url, options);
-  }, [photo]);
+  }, [photo, request]);
 
   function handleOutsideClick(event) {
     if (event.target === event.currentTarget) {

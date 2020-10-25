@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import styles from "./User.module.css";
-
 import UserHeader from "../../components/UserHeader";
 import Feed from "../../components/Feed";
 import UserPhotoPost from "../../components/UserPhotoPost";

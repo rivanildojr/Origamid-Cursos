@@ -1,7 +1,5 @@
 import React from "react";
 
-import styles from "./Home.module.css";
-
 import Feed from "../../components/Feed";
 
 import Head from "../../utils/Head";

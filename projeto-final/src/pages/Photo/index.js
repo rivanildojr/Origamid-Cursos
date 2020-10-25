@@ -32,8 +32,6 @@ const Photo = () => {
       </section>
     );
   else return null;
-
-  return <div>Photo</div>;
 };
 
 export default Photo;

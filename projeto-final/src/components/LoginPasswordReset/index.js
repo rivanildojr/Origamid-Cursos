@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-import styles from "./LoginPasswordReset.module.css";
-
 import Input from "../Input";
 import Button from "../Button";
 import Error from "../../utils/Error";
@@ -10,7 +8,7 @@ import Head from "../../utils/Head";
 import useForm from "../../hooks/useForm";
 import useFetch from "../../hooks/useFetch";
 
-import { PASSWORD_LOST, PASSWORD_RESET } from "../../service/api";
+import { PASSWORD_RESET } from "../../service/api";
 import { useNavigate } from "react-router-dom";
 
 const LoginPasswordReset = () => {
@@ -45,7 +43,7 @@ const LoginPasswordReset = () => {
   }
 
   return (
-    <div>
+    <section className="animeLeft">
       <Head title="Resetar a senha" />
       <h1 className="title">Resete a Senha</h1>
       <form onSubmit={handleSubmit}>
@@ -62,7 +60,7 @@ const LoginPasswordReset = () => {
         )}
       </form>
       <Error error={error} />
-    </div>
+    </section>
   );
 };
 

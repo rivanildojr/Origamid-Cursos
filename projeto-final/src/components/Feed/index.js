@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
-import styles from "./Feed.module.css";
-
 import FeedModal from "../FeedModal";
 import FeedPhotos from "../FeedPhotos";
 

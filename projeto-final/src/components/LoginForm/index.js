@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./LoginForm.module.css";
@@ -39,7 +39,7 @@ const LoginForm = () => {
         ) : (
           <Button>Entrar</Button>
         )}
-        <Error error={error} />
+        <Error error={error && "Dados Incorretos."} />
       </form>
       <Link className={styles.perdeu} to="/login/perdeu">
         Perdeu a Senha?

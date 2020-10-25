@@ -1,7 +1,5 @@
 import React, { lazy, Suspense, useEffect } from "react";
 
-import styles from "./UserStats.module.css";
-
 import Head from "../../utils/Head";
 import Error from "../../utils/Error";
 import Loading from "../../utils/Loading";
