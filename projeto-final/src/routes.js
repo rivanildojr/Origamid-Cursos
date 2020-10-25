@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import User from "./pages/User";
 import Photo from "./pages/Photo";
 import Profile from "./pages/Profile";
+import NotFound from "./pages/NotFound";
 
 import ProtectedRoute from "./utils/ProtectedRoute";
 
@@ -17,6 +18,7 @@ const Router = () => {
       <ProtectedRoute path="conta/*" element={<User />} />
       <Route path="foto/:id" element={<Photo />} />
       <Route path="perfil/:id" element={<Profile />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
