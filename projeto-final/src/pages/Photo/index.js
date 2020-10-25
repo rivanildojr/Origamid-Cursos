@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import styles from "./Photo.module.css";
-
 import useFetch from "../../hooks/useFetch";
 
 import { PHOTO_ID_GET } from "../../service/api";
